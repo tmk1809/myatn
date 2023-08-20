@@ -1,0 +1,21 @@
+<div class="container col-md-6 mt-3 mb-3 card bg-light">
+    <form action="/product/edit/{{ product._id }}" method="post">
+        <h1 class="text text-danger text-center text-uppercase mt-3">Edit product</h1>
+        <div class="form-group mt-3">
+            <label class="h5 text text-success" for="">Product name</label>
+            <input class="form-control" type="text" name="name" value={{ product.name }} required>
+        </div>
+        <div class="form-group mt-3">
+            <label class="h5 text text-success" for="">Price</label>
+            <input class="form-control" type="text" name="price" value={{ product.price }} required>
+        </div>
+        <div class="form-group mt-3">
+            <label class="h5 text text-success" for="">Image</label><br>
+            <img src="/images/{{ product.picture }}" width="100" height="100">
+            <input class="form-control" type="file" name="picture" value={{ product.picture }} required>
+        </div>
+        <div class="form-group text-center mt-3 mb-3">
+            <input class="btn btn-primary" type="submit" value="Edit">
+        </div>
+    </form>
+</div>
