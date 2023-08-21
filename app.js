@@ -13,7 +13,7 @@ var app = express();
 var mongoose = require("mongoose");
 var uri = "mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/ATNToys";
 mongoose
-  .connect(uri)
+  .connect(uri, { useNewUrlParser: true })
   .then(console.log("Connect succeed !"))
   .catch((err) => console.log("Connect failed !"));
   mongoose.set('strictQuery', true);
