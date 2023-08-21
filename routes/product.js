@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get("/allProduct", async (req, res) => {
   var server = await MongoClient.connect(
-    "mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/"
+    "mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/", { useNewUrlParser: true }
   );
   var dbo = server.db("ATNToys");
   var products = await dbo.collection("product").find().toArray();
@@ -23,7 +23,7 @@ router.post("/newProduct", async (req, res) => {
   // res.redirect("/product/allProduct");
 
   //1. connect to URL server
-  let server = await MongoClient.connect("mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/")
+  let server = await MongoClient.connect("mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/", { useNewUrlParser: true })
   //2. access to database
   let dbo = server.db("ATNToys")
   //3. insert product to database
@@ -40,7 +40,7 @@ router.get("/delete/:id", async (req, res) => {
   // await ProductModel.findByIdAndDelete(req.params.id);
   // res.redirect("/product/allProduct");
 
-  let server = await MongoClient.connect("mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/")
+  let server = await MongoClient.connect("mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/", { useNewUrlParser: true })
   //2. access to database
   let dbo = server.db("ATNToys")
   let products = await dbo.collection('product').find()
