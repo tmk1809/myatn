@@ -16,6 +16,7 @@ mongoose
   .connect(uri)
   .then(console.log("Connect succeed !"))
   .catch((err) => console.log("Connect failed !"));
+  mongoose.set('strictQuery', true);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
