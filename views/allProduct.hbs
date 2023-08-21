@@ -22,17 +22,18 @@
     <table class="table">
         <thead>
             <tr>
+                <th>ID Product</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Picture</th>
-                <th>Action</th>
+                <th style="text-align: center;">Action</th>
             </tr>
         </thead>
         <tbody>
             {{#each products}}
             <tr>
-                
-                <td>{{@index}}-{{name}}</td>
+                <td>{{@index}}{{id}}</td>
+                <td>{{name}}</td>
                 <td>{{price}}</td>
                 <td><img src="{{picture}}" width="150" height="100" /></td>
                 <td><a href="edit/{{ _id }}">Edit</a></td>
